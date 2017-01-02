@@ -52,3 +52,4 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'haml'
 gem 'mysql2'
 gem 'rails-assets-tether', '>= 1.1.0' # used by bootstrap
+gem 'gon'

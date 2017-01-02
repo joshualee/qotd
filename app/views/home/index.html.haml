@@ -1,3 +1,27 @@
-%div.jumbotron
-  %h1 Example
-  %p This is an example
+.jumbotron
+  %p
+    = @question.date.to_formatted_s(:long)
+  %h1
+    = @question.text
+  %p
+    = "Time to respond: #{distance_of_time_in_words(Time.current, @question.date + 1.day)}"
+  %p
+    %button.btn.btn-success{type: 'button'} Yes
+    %button.btn.btn-danger{type: 'button'} No
+  %p
+    %a#show_responses{href: '#'} Show Responses
+  .responses.hidden
+    %h4 Responses
+    %progress.progress.progress-success{value: 75, max: 100}
+    %div.yes-responses
+      %span.yes-response-count 3
+      Yes
+      %span.yes-response-percent (75%)
+    %progress.progress.progress-danger{value: 25, max: 100}
+    %div.no-responses
+      %span.no-response-count 1
+      No
+      %span.no-response-percent (25%)
+    %p
+      %span.total-response-count 4
+      Total Responses
