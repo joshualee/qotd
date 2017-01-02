@@ -88,7 +88,6 @@ $(document).ready(function() {
   }
 
   var redraw = function() {
-    console.log(gon);
     $("#responses").toggleClass("hidden", hideResponses);
     $("#show_responses").html((hideResponses) ? "Show Responses" : "Hide Responses");
 

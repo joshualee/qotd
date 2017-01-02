@@ -13,4 +13,10 @@ test:
   <<: *default
 
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  database: "<%= ENV["QOTD_MYSQL_PRODUCTION_DATABASE"] %>"
+  username: "<%= ENV["QOTD_MYSQL_PRODUCTION_USERNAME"] %>"
+  password: "<%= ENV["QOTD_MYSQL_PRODUCTION_PASSWORD"] %>"
+  host: "<%= ENV["QOTD_MYSQL_PRODUCTION_HOST"] %>"
+  port: <%= ENV["QOTD_MYSQL_PRODUCTION_PORT"] %>
