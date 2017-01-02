@@ -29,7 +29,18 @@ $(document).ready(function() {
     redraw();
   });
 
+  var flashMessage = function(message) {
+    $("#flash_message").html(message);
+
+    $("#flash").delay(500).fadeIn("normal", function() {
+      $(this).delay(2500).fadeOut();
+    });
+  }
+
   var respond = function(response) {
+    // TODO(josh.lee): for now don't do any error handling
+    $.post("questions/respond/" + gon.questionId, { response: response });
+
     if (response) {
       gon.yesCount += 1;
 
@@ -52,6 +63,8 @@ $(document).ready(function() {
   };
 
   var unrespond = function(response) {
+    // TODO(josh.lee): for now don't do any error handling
+    $.post("questions/unrespond/" + gon.questionId, { response: response });
     if (response) {
       gon.yesCount -= 1;
     } else {

@@ -49,7 +49,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'gon'
 gem 'haml'
+gem 'js-routes'
 gem 'mysql2'
 gem 'rails-assets-tether', '>= 1.1.0' # used by bootstrap
-gem 'gon'
