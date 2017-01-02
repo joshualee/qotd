@@ -6,22 +6,22 @@
   %p
     = "Time to respond: #{distance_of_time_in_words(Time.current, @question.date + 1.day)}"
   %p
-    %button.btn.btn-success{type: 'button'} Yes
-    %button.btn.btn-danger{type: 'button'} No
+    %button.btn.btn-lg.btn-yes{type: 'button'} Yes
+    %button.btn.btn-lg.btn-no{type: 'button'} No
   %p
-    %a#show_responses{href: '#'} Show Responses
-  .responses.hidden
+    %a#show_responses{href: ''}
+  #responses
     %h4 Responses
-    %progress.progress.progress-success{value: 75, max: 100}
+    %progress.progress.progress-success.progress-yes{value: 75, max: 100}
     %div.yes-responses
-      %span.yes-response-count 3
+      %span.yes-response-count
       Yes
-      %span.yes-response-percent (75%)
-    %progress.progress.progress-danger{value: 25, max: 100}
+      %span.yes-response-percent
+    %progress.progress.progress-danger.progress-no{value: 25, max: 100}
     %div.no-responses
-      %span.no-response-count 1
+      %span.no-response-count
       No
-      %span.no-response-percent (25%)
+      %span.no-response-percent
     %p
-      %span.total-response-count 4
+      %span.total-response-count
       Total Responses

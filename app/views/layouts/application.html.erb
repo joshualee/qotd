@@ -5,6 +5,7 @@
     <%= Gon::Base.render_data %>
     <%= csrf_meta_tags %>
 
+    <%= javascript_include_tag "https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>

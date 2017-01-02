@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102190210) do
+ActiveRecord::Schema.define(version: 20170102195552) do
 
   create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "date"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20170102190210) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["date"], name: "index_questions_on_date", unique: true, using: :btree
+  end
+
+  create_table "responses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "question_id"
+    t.boolean  "response",     null: false
+    t.string   "ip_address"
+    t.datetime "responded_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["question_id", "ip_address"], name: "index_responses_on_question_id_and_ip_address", unique: true, using: :btree
   end
 
 end
